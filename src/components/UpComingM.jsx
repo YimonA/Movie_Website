@@ -8,7 +8,7 @@ const UpComingM = () => {
   const { filtered, coming } = useContextCustom();
 
   return (
-    <div className=" container mx-auto bg-black ">
+    <div className=" container mx-auto bg-black h-screen">
       <Filter type={coming} />
       <p className=" text-xl font-semibold text-[#adff2f] px-20 py-10 mb-4">
         Up Coming Movies

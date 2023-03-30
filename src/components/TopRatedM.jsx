@@ -15,7 +15,7 @@ const TopRatedM = () => {
       </p>
 
       {filtered?.length === 0 ? (
-        <div className="text-2xl text-[#adff2f] font-semibold text-center">
+        <div className="text-2xl text-[#adff2f] h-screen font-semibold text-center">
           No result found.
         </div>
       ) : (

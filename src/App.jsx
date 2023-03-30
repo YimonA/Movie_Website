@@ -10,7 +10,7 @@ import H from "./components/H";
 
 const App = () => {
   return (
-    <div className=" container mx-auto ">
+    <div className=" container mx-auto h-screen bg-black">
       <Navbar />
       <Routes>
         <Route path="/" element={<H />}></Route>
@@ -19,7 +19,6 @@ const App = () => {
         <Route path="/nowplayingmovie" element={<NowPlayingM />}></Route>
         <Route path="/topratedmovie" element={<TopRatedM />}></Route>
         <Route path="/detail" element={<Detail />}></Route>
-
       </Routes>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useContextCustom } from "../context/stateContext";
 
 const Filter = ({ type }) => {
-  const { popular, genreMovie, setFiltered, activeGenre, setActiveGenre } =
+  const { genreMovie, setFiltered, activeGenre, setActiveGenre } =
     useContextCustom();
   console.log(type);
 
@@ -23,29 +23,30 @@ const Filter = ({ type }) => {
   }, [activeGenre]);
   return (
     <div className=" container mx-auto">
-      
-        <div className=" md:hidden dropdown dropdown-bottom flex justify-center my-3">
-          <label tabIndex={0} className="btn m-1 border-2 border-[#adff2f] w-[95%] bg-black">
-            <p className=" mx-auto font-semibold text-[#adff2f] ">Genres</p>
-          </label>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu p-2 shadow rounded-box w-52 bg-black text-[#adff2f]"
-          >
-            <li>
-              <a onClick={all}>All</a>
-            </li>
-            {genreMovie?.map((genre) => {
-          return (
-        
-            <li>
-              <a onClick={() => setActiveGenre(genre.id)}
->{genre.name}</a>
-            </li>
-          )})}
-          </ul>
-        </div>
-      
+      <div className=" md:hidden dropdown dropdown-bottom flex justify-center py-3">
+        <label
+          tabIndex={0}
+          className="btn m-1 border-2 border-[#adff2f] w-[95%] bg-black"
+        >
+          <p className=" mx-auto font-semibold text-[#adff2f] ">Genres</p>
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu p-2 shadow rounded-box w-52 bg-black text-[#adff2f]"
+        >
+          <li>
+            <a onClick={all}>All</a>
+          </li>
+          {genreMovie?.map((genre) => {
+            return (
+              <li>
+                <a onClick={() => setActiveGenre(genre.id)}>{genre.name}</a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
       <div className=" pt-10 hidden md:flex flex-wrap py-6 gap-5 justify-center bg-black px-6">
         <button
           onClick={all}
