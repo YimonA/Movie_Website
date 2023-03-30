@@ -33,7 +33,7 @@ const Detail = () => {
 */
 
   return (
-    <div className=" container h-screen mx-auto p-4 md:p-8 bg-black">
+    <div className=" container mx-auto p-4 md:p-8 bg-black">
       <h1 className="text-3xl text-black">detail</h1>
           <p className=" text-2xl md:pl-8 text-[#adff2f] font-bold mb-5">
             {detailMovie.title}

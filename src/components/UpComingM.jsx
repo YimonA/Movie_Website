@@ -8,13 +8,13 @@ const UpComingM = () => {
   const { filtered, coming } = useContextCustom();
 
   return (
-    <div className=" container mx-auto bg-black h-screen">
+    <div className=" container mx-auto bg-black ">
       <Filter type={coming} />
       <p className=" text-xl font-semibold text-[#adff2f] px-20 py-10 mb-4">
         Up Coming Movies
       </p>
       {filtered?.length === 0 ? (
-        <div className="text-2xl text-[#adff2f] font-semibold text-center">
+        <div className="text-2xl text-[#adff2f] font-semibold  text-center">
           No result found.
         </div>
       ) : (

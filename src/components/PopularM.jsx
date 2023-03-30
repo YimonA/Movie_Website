@@ -8,7 +8,7 @@ const PopularM = () => {
   const { filtered, popular } = useContextCustom();
 
   return (
-    <div className=" container mx-auto bg-black h-screen">
+    <div className=" container mx-auto bg-black">
       <Filter type={popular} />
       <p className=" text-xl font-semibold text-[#adff2f] px-20 py-10 mb-4">Popular Movies</p>
       {filtered?.length === 0 ? (

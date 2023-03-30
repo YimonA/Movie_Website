@@ -8,7 +8,7 @@ const NowPlayingM = () => {
   const { filtered, playing } = useContextCustom();
 
   return (
-    <div className=" container mx-auto bg-black h-screen">
+    <div className=" container mx-auto bg-black ">
 
       <Filter type={playing} />
       <p className=" text-xl font-semibold text-[#adff2f] px-20 py-10 mb-4">Now Playing Movies</p>
