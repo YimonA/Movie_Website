@@ -1,0 +1,10 @@
+a:active {
+  background-color: #adff2f;
+  color: black;
+}
+a.active {
+  background-color: rgb(94, 93, 93);
+  color: #adff2f;
+}
+
+
