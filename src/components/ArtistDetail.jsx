@@ -12,7 +12,7 @@ const Detail = () => {
   }, []);
   
   return (
-    <div className=" container mx-auto p-4 md:p-8 bg-black sm:h-full">
+    <div className=" container mx-auto p-4 md:p-8 bg-black ">
       <h1 className="text-3xl text-black">detail</h1>
       <p className=" text-2xl md:pl-8 text-[#ff0] font-bold mb-5">
         {detailArt.name}
