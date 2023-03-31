@@ -2,75 +2,64 @@ import React, { useEffect, useState } from "react";
 import { useContextCustom } from "../context/stateContext";
 import "./DetailProgress.css";
 
-const Detail = () => {
+const DetailTV = () => {
   const {
-    state: { detail },
-    genreMovie,
+    state: { detailTV },
+    genreTV,
   } = useContextCustom();
-  const [detailMovie, setDetailMovie] = useState(detail[0]);
-  //const [id, setID] = useState();
+  const [detailTVV, setDetailTVV] = useState(detailTV[0]);
   const [gen, setGen] = useState();
 
   useEffect(() => {
-    //setID(detailMovie.genre_ids[0]);
     filterG();
   }, []);
 
   const filterG = () => {
-    detailMovie.genre_ids.map((di) => {
-      const filter = genreMovie?.filter((gm) => gm.id == di);
+    detailTVV.genre_ids.map((di) => {
+      const filter = genreTV?.filter((gm) => gm.id == di);
       console.log(filter[0].name);
       setGen(filter[0].name);
     });
   };
-  /*
-  const filterM = () => {
-    const filter = genreMovie?.filter((gm) => gm.id == id);
-    //dispatch({ type: "GET_GENRES", payLoad: filter });
-    console.log(filter);
-    setGen(filter);
-  };
-*/
 
   return (
-    <div className=" container mx-auto p-4 md:p-8 bg-black">
+    <div className=" container sm:h-full mx-auto p-4 md:p-8 bg-black">
       <h1 className="text-3xl text-black">detail</h1>
           <p className=" text-2xl md:pl-8 text-[#ff0] font-bold mb-5">
-            {detailMovie.title}
-          </p>
+            {detailTVV.title}          </p>
       <div className="flex flex-wrap md:flex-row justify-around">
         <div className=" mb-4 md:w-[35%]">
           <img
             className=" rounded border-4 border-[#ff0] h-[350px] w-full object-cover"
             loading="lazy"
-            src={"https://image.tmdb.org/t/p/w300" + detailMovie.backdrop_path}
+            src={"https://image.tmdb.org/t/p/w300" + detailTVV.backdrop_path}
             alt=""
           />
         </div>
-        <div className="flex flex-col justify-between w-full md:w-[50%]">
+        <div className="flex flex-col justify-between w-full max-h-[600px] md:w-[50%]">
           <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
-            Movie Name: {detailMovie.title}
+            Movie Name: {detailTVV.name}
           </p>
           <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
-            Release Date: {detailMovie.release_date}
+            Release Date: {detailTVV.first_air_date}
           </p>
           <p className=" text-sm md:text-lg text-[#ff0] font-semibold">Genres: {gen}</p>
           <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
-            Language: english
+            Language: English
           </p>
 
           <div>
             <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
-              User Score: {(detailMovie.vote_average * 10).toFixed(2)}%
+              User Score: {(detailTVV.vote_average * 10).toFixed(2)}%
             </p>
             <progress
               className="progress progress-success w-56 myProgress"
-              value={(detailMovie.vote_average * 10).toFixed(2)}
+              value={(detailTVV.vote_average * 10).toFixed(2)}
               max="100"
             ></progress>
           </div>
           <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
-            Overview: {detailMovie.overview}
+            Overview: {detailTVV.overview}
           </p>
         </div>
       </div>
@@ -78,4 +67,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default DetailTV;

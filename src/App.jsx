@@ -8,6 +8,14 @@ import PopularM from "./components/PopularM";
 import Detail from "./components/Detail";
 import H from "./components/H";
 
+import Artists from "./components/Artists";
+import Contact from "./components/Contact";
+import ArtistDetail from "./components/ArtistDetail";
+import Footer from "./components/Footer";
+import TopRatedTV from "./components/TopRatedTV";
+import PopularTV from "./components/PopularTV";
+import DetailTV from "./components/DetailTV";
+
 const App = () => {
   return (
     <div className=" container mx-auto h-screen bg-black">
@@ -19,7 +27,15 @@ const App = () => {
         <Route path="/nowplayingmovie" element={<NowPlayingM />}></Route>
         <Route path="/topratedmovie" element={<TopRatedM />}></Route>
         <Route path="/detail" element={<Detail />}></Route>
+
+        <Route path="/detailtv" element={<DetailTV />}></Route>
+        <Route path="/artists" element={<Artists />}></Route>
+        <Route path="/artistdetail" element={<ArtistDetail />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/populartv" element={<PopularTV />}></Route>
+        <Route path="/topratedtv" element={<TopRatedTV />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 };

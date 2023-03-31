@@ -5,17 +5,15 @@ import { BsInfoCircle } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useContextCustom } from "../context/stateContext";
 
-const Movie = (props) => {
-  //const{title}=props;
-
+const TV = (props) => {
   const {
     id,
     genre_ids,
-    title,
+    name,
     backdrop_path,
     overview,
     popularity,
-    release_date,
+    first_air_date,
     vote_average,
     vote_count,
   } = props;
@@ -30,7 +28,8 @@ const Movie = (props) => {
       transition={{ duration: 0.5 }}
     >
       <div className="myParent relative duration-700">
-        <p className=" text-base text-[#ff0] font-semibold">{title}</p>
+        <p className=" text-base text-[#ff0] font-semibold">{name}</p>
+
         <img
           className=" rounded border-8 border-[#ff0] h-[200px] w-[300px] hover:scale-110 lg:hover:scale-125 duration-700"
           loading="lazy"
@@ -38,10 +37,10 @@ const Movie = (props) => {
           alt=""
         />
         <div className="myIcon absolute top-[45%] left-[45%] ">
-          <Link to={"/detail"}>
+          <Link to={"/detailtv"}>
             <button
               onClick={() =>
-                dispatch({ type: "ADD_TO_DETAIL", payLoad: props })
+                dispatch({ type: "ADD_TO_DETAIL_TV", payLoad: props })
               }
               className="w-12 h-12 rounded-full flex justify-center items-center font-semibold bg-[#ff0]"
             >
@@ -54,4 +53,4 @@ const Movie = (props) => {
   );
 };
 
-export default Movie;
+export default TV;

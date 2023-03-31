@@ -11,16 +11,16 @@ const NowPlayingM = () => {
     <div className=" container mx-auto bg-black ">
 
       <Filter type={playing} />
-      <p className=" text-xl font-semibold text-[#adff2f] px-20 py-10 mb-4">Now Playing Movies</p>
+      <p className=" text-xl font-semibold text-[#ff0] px-20 py-10 mb-4">Now Playing Movies</p>
       
       {filtered?.length === 0 ? (
-        <div className="text-2xl text-[#adff2f] font-semibold text-center">
+        <div className="text-2xl text-[#ff0] font-semibold text-center">
           No result found.
         </div>
       ) : (
         <motion.div
           layout
-          className=" flex flex-wrap justify-center gap-10 pt-3 pb-10"
+          className=" flex flex-wrap justify-center gap-10 pt-3 pb-24"
         >
           <AnimatePresence>
             {filtered?.map((movie) => {

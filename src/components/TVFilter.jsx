@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useContextCustom } from "../context/stateContext";
 
 const Filter = ({ type }) => {
-  const { genreMovie, setFiltered, activeGenre, setActiveGenre } =
+  const { genreTV, setFiltered, activeGenre, setActiveGenre } =
     useContextCustom();
   console.log(type);
 
@@ -15,11 +15,11 @@ const Filter = ({ type }) => {
       setFiltered(type);
       return;
     }
-    const filterMovie = type.filter((movie) =>
-      movie.genre_ids.includes(activeGenre)
+    const filterMovie = type.filter((tv) =>
+      tv.genre_ids.includes(activeGenre)
     );
     console.log(filterMovie);
-    setFiltered(filterMovie);
+    setFiltered(filterMovie);//filterMovie also mean filterTV
   }, [activeGenre]);
   return (
     <div className=" container mx-auto">
@@ -37,7 +37,7 @@ const Filter = ({ type }) => {
           <li>
             <a onClick={all}>All</a>
           </li>
-          {genreMovie?.map((genre) => {
+          {genreTV?.map((genre) => {
             return (
               <li>
                 <a onClick={() => setActiveGenre(genre.id)}>{genre.name}</a>
@@ -47,14 +47,14 @@ const Filter = ({ type }) => {
         </ul>
       </div>
 
-      <div className=" pt-10 hidden md:flex flex-wrap py-6 gap-5 justify-center bg-black px-6">
+      <div className=" pt-10 hidden md:flex flex-wrap py-6 gap-5 justify-center bg-black px-6 w-[80%] mx-auto">
         <button
           onClick={all}
           className="btn btn-active rounded-2xl font-semibold text-[#ff0] border-4 border-[#ff0] hover:bg-gray-300 hover:text-black"
         >
           All
         </button>
-        {genreMovie?.map((genre) => {
+        {genreTV?.map((genre) => {
           return (
             <button
               key={genre.id}
@@ -66,10 +66,7 @@ const Filter = ({ type }) => {
           );
         })}
 
-        {/*
-      <button onClick={()=>setActiveGenre(28)} className="btn btn-active rounded-2xl font-semibold text-[#ff0] border-4 border-[#ff0] hover:bg-gray-300 hover:text-black">Action</button>
-      <button onClick={()=>setActiveGenre(35)} className="btn btn-active rounded-2xl font-semibold text-[#ff0] border-4 border-[#ff0] hover:bg-gray-300 hover:text-black">Comedy</button>
-  */}
+
       </div>
     </div>
   );

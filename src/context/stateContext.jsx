@@ -18,9 +18,14 @@ export const StateContextProvider = ({ children }) => {
   const [topRated, setTopRated] = useState([]);
   const [playing, setPlaying] = useState([]);
   const [genreMovie, setGenreMovie] = useState([]);
+
+  const [popularTV, setPopularTV] = useState([]);
+  const [topRatedTV, setTopRatedTV] = useState([]);
+  const [genreTV, setGenreTV] = useState([]);
+  const [people, setPeople] = useState([]);
+
   //const [languageMovie, setLanguageMovie] = useState([]);
   //const [people, setPeople] = useState([]);
-
 
   useEffect(() => {
     fetchPopular();
@@ -29,28 +34,49 @@ export const StateContextProvider = ({ children }) => {
     fetchTrending();
     fetchTopRated();
     fetchGenreMovie();
+
+    fetchPopularTV();
+    fetchPeople();
+    fetchTopRatedTV();
+    fetchGenreTV();
     //fetchLanguageMovie();
     //fetchPeople();
   }, []);
-  
+
   const fetchPeople = async () => {
     const api = await fetch(
       `https://api.themoviedb.org/3/person/popular?api_key=9be0d61d68cfa0c9f726d094e6d8d40f&language=en-US&page=1`
-
     );
     const { results } = await api.json();
     setPeople(results);
-  console.log("people",results);
+    console.log("people", results);
   };
 
-  const fetchLanguageMovie = async () => {
+  const fetchTopRatedTV = async () => {
     const api = await fetch(
-      `https://api.themoviedb.org/3/configuration/languages?api_key=9be0d61d68cfa0c9f726d094e6d8d40f`
-
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=9be0d61d68cfa0c9f726d094e6d8d40f&language=en-US&page=1`
     );
-    const data = await api.json();
-    setLanguageMovie(data);
-  console.log(data);
+    const { results } = await api.json();
+    setTopRatedTV(results);
+    //setFiltered(results);
+    console.log("top tv", results);
+  };
+
+  const fetchPopularTV = async () => {
+    const api = await fetch(
+      `https://api.themoviedb.org/3/tv/popular?api_key=9be0d61d68cfa0c9f726d094e6d8d40f&language=en-US&page=1`
+    );
+    const { results } = await api.json();
+    setPopularTV(results);
+    console.log("popular tv", results);
+  };
+  const fetchGenreTV = async () => {
+    const api = await fetch(
+      `https://api.themoviedb.org/3/genre/tv/list?api_key=9be0d61d68cfa0c9f726d094e6d8d40f&language=en-US`
+    );
+    const { genres } = await api.json();
+    setGenreTV(genres);
+    console.log("tv genre", genres);
   };
 
   const fetchGenreMovie = async () => {
@@ -59,7 +85,7 @@ export const StateContextProvider = ({ children }) => {
     );
     const { genres } = await api.json();
     setGenreMovie(genres);
-  console.log(genres);
+    console.log(genres);
   };
 
   const fetchPlaying = async () => {
@@ -116,7 +142,10 @@ export const StateContextProvider = ({ children }) => {
     popular: [],
     filtered: [],
     detail: [],
-    genres:[]
+    genres: [],
+    people: [],
+    detailArtist: [],
+    detailTV: [],
   };
   /*
 
@@ -134,11 +163,15 @@ export const StateContextProvider = ({ children }) => {
     filtered,
     setFiltered,
     popular,
+    topRatedTV,
+    genreTV,
+    popularTV,
+    people,
     genreMovie,
     activeGenre,
     setActiveGenre,
     coming,
-    trending,
+    
     topRated,
     playing,
     state,

@@ -1,17 +1,17 @@
 import React from "react";
-import Movie from "./Movie";
 import { AnimatePresence, motion } from "framer-motion";
 import { useContextCustom } from "../context/stateContext";
-import Filter from "./Filter";
+import TVFilter from "./TVFilter";
+import TV from "./TV";
 
-const UpComingM = () => {
-  const { filtered, coming } = useContextCustom();
+const PopularTV = () => {
+  const { filtered, popularTV } = useContextCustom();
 
   return (
     <div className=" container mx-auto bg-black ">
-      <Filter type={coming} />
+      <TVFilter type={popularTV} />
       <p className=" text-xl font-semibold text-[#ff0] px-20 py-10 mb-4">
-        Up Coming Movies
+     Popular TV 
       </p>
       {filtered?.length === 0 ? (
         <div className="text-2xl text-[#ff0] font-semibold  text-center">
@@ -23,8 +23,8 @@ const UpComingM = () => {
           className=" flex flex-wrap justify-center gap-10 pt-3 pb-24"
         >
           <AnimatePresence>
-            {filtered?.map((movie) => {
-              return <Movie key={movie.id} {...movie} />;
+            {filtered?.map((tv) => {
+              return <TV key={tv.id} {...tv} />;
             })}
           </AnimatePresence>
         </motion.div>
@@ -33,4 +33,4 @@ const UpComingM = () => {
   );
 };
 
-export default UpComingM;
+export default PopularTV;
