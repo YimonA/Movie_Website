@@ -9,8 +9,8 @@ const Contact = () => {
       <div className="flex flex-col justify-around gap-5 items-center w-full lg:w-[45%] mt-4 ">
         <div className="flex flex-col w-full">
           <h3 className="text-2xl lg:text-4xl text-extrabold text-center mb-4 text-[#ff0]">Sign up for the newsletters</h3>
-          <div className=" my-4 mx-auto">
-            <input type="text" placeholder="Enter Email" className="input input-ghost input-sm max-w-xs border-[#ff0]" />
+          <div className=" my-4 mx-auto sm:flex sm:flex-col sm:justify-center">
+            <input type="text" placeholder="Enter Email" className="input input-ghost input-sm max-w-xs  border-[#ff0]" />
             <button className="btn btn-outline btn-sm bg-[#ff0] hover:border-[#ff0] lg:ml-4  ml-2 mt-2">Subscribe Now</button>
           </div>
         </div>

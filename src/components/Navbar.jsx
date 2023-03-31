@@ -36,7 +36,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-52 text-[#ff0] bg-[#13141f] "
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-40 text-[#ff0] bg-[#13141f] "
             >
               <li tabIndex={0}>
                 <a className="justify-between">
