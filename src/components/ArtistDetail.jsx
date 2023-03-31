@@ -26,7 +26,7 @@ const Detail = () => {
             alt=""
           />
         </div>
-        <div className="flex flex-col w-full md:w-[50%] justify-between">
+        <div className="flex flex-col w-full md:w-[50%] h-full justify-between">
           <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
             Movie Name: {detailArt.name}
           </p>
@@ -48,7 +48,7 @@ const Detail = () => {
                 </p>
               ))}
             </div>
-            <div className="flex flex-col justify-start items-start">
+            <div className="flex flex-col sm:hidden justify-start items-start">
               {detailArt.known_for.map((m) => (
                 <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
                   {m.release_date}{" "}
@@ -70,7 +70,7 @@ const Detail = () => {
                 </p>
               ))}
             </div>
-            <div className="flex flex-col justify-start items-start">
+            <div className="flex flex-col sm:hidden justify-start items-start">
               {detailArt.known_for.map((m) => (
                 <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
                   {m.first_air_date}{" "}

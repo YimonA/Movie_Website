@@ -40,7 +40,7 @@ const Navbar = () => {
             >
               <li tabIndex={0}>
                 <a className="justify-between">
-                  <p className="font-semibold text-xl">Movies</p>
+                  <p className="font-semibold text-xl w-16">Movies</p>
 
                   <svg
                     className="fill-current"
