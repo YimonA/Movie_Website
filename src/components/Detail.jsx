@@ -47,7 +47,7 @@ const Detail = () => {
             alt=""
           />
         </div>
-        <div className="flex flex-col justify-between w-full md:w-[50%]">
+        <div className="flex flex-col justify-between w-full md:w-[50%] max-h-[600px]">
           <p className=" text-sm md:text-lg text-[#ff0] font-semibold">
             Movie Name: {detailMovie.title}
           </p>

@@ -78,7 +78,7 @@ const Navbar = () => {
                 </ul>
               </li>
               <li tabIndex={0}>
-                <a>
+                <a className=" justify-between">
                   <p className="font-semibold text-xl w-16">TV</p>
 
                   <svg
